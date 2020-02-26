@@ -18,7 +18,7 @@ let server = net.createServer(function(connection) {
 
   // Send some data to the client. We have to include a newline
   // if that's what we want the client to receive.
-  connection.write(`Current time: ${currentTime}\n`);
+  connection.write(`Current time: ${currentTime}`);
 
   // Terminate the client's connection. We might not always want to
   // end the connection immediately after sending the client some data.
