@@ -18,11 +18,13 @@ let server = net.createServer(function(connection) {
   // The clientData argument contains whatever data the client sent to us.
   connection.on('data', function(clientData) {
     // Use console.log to record when a client sends us data.
+    console.log('data input');
+    connection.write('Please put some data you would like to have printed');
     // Use connection.write(...) to send data to the client
-
+    connection.write(clientData);
     // Remember, an echo server sends back exactly what was received.
   });
-
+  connection.write('Please put some data you would like to have printed');
   // Print a log message when a client disconnects
   connection.on('end', function() {
     serverLog('DISCONNET', `Client ${clientAddress} disconnected`);
